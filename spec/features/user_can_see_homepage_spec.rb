@@ -5,12 +5,12 @@ feature 'Homepage' do
     visit('/')
     expect(page).to have_content 'Welcome to the Finstagram (Fake Instagram)'
     click_link "Sign Up"
-    expect(page).to have_content 'Sign up'
+    expect(page).to have_content 'Sign Up'
   end
 
   scenario 'Shows user homepage leads login page' do
     visit('/')
-    click_link "Log In"
-    expect(page).to have_content 'Login here!'
+    click_link "Login"
+    expect(page).to have_content 'Login Here!'
   end
 end

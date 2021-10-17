@@ -1,11 +1,13 @@
 
-This is the name using sessions<%= session[:user_id]%> 
+<div> This is the name using sessions : <%= session[:user_id]%> </div> <br>
 
-This is the user using Current User <%=Current.user.first_name%>
+<div> This is the user(using current.user.first_name) : <%=Current.user.first_name%> </div>
 
+<div>
 <%= link_to new_post_path do %>
-  New post
+  Create a new post
 <% end %>
+</div>
 
 
 <%= button_to 'Logout', logout_path, method: :delete %>

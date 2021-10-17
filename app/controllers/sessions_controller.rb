@@ -8,9 +8,10 @@ class SessionsController < ApplicationController
     if user.present? && user.authenticate(params[:password])
       # sets up user.id sessions
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'Logged in successfully'
+      session[:first_name] = user.first_name
+      redirect_to posts_path, notice: 'Logged in successfully'
     else
-      flash.now[:alert] = 'Invalid email or password'
+      flash.now[:alert] = ' You have used an invalid email or password, Let\'s try that again!'
       render :new
     end
   end
