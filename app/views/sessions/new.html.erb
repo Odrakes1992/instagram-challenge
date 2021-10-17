@@ -1,0 +1,15 @@
+ <h1>Login Here!</h1>
+
+  <%= form_with url: sign_in_path do |form| %>
+    <div class='mb-3'>
+    <%= form.label 'email:'%><br>
+    <%= form.text_field :email, id: 'email' %>
+    </div>
+    <div class='mb-3'>
+    <%= form.label 'password:'%><br>
+    <%= form.password_field :password, id: 'password' %>
+    </div>
+    <div class='mb-3'>
+    <%= form.submit 'Log In' %>
+    </div>
+  <% end %>
