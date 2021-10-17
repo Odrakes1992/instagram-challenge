@@ -9,6 +9,7 @@ class RegistrationsController < ApplicationController
     if @user.save
     # stores saved user id in a session
       session[:user_id] = @user.id
+      session[:first_name] = @user.first_name
       set_current_user
       redirect_to posts_path, notice: 'Successfully created account'
     else

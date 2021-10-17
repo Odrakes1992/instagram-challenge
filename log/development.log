@@ -1735,3 +1735,162 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 12ms (Views: 11.2ms | Allocations: 5122)
 
 
+Started GET "/sign_in" for ::1 at 2021-10-17 16:38:16 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 49.3ms | Allocations: 2039)
+  Rendered layout layouts/application.html.erb (Duration: 95.7ms | Allocations: 6619)
+Completed 200 OK in 141ms (Views: 121.0ms | Allocations: 7063)
+
+
+Started POST "/sign_in" for ::1 at 2021-10-17 16:38:24 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"roger@test.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "roger@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 310ms (ActiveRecord: 41.7ms | Allocations: 5310)
+
+
+Started GET "/posts" for ::1 at 2021-10-17 16:38:24 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4786)
+Completed 200 OK in 24ms (Views: 15.8ms | ActiveRecord: 0.7ms | Allocations: 5944)
+
+
+Started GET "/posts" for ::1 at 2021-10-17 16:40:31 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 414)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 5251)
+Completed 200 OK in 96ms (Views: 24.3ms | ActiveRecord: 37.1ms | Allocations: 11462)
+
+
+Started DELETE "/logout" for ::1 at 2021-10-17 16:43:04 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 3.0ms | Allocations: 1069)
+
+
+Started GET "/" for ::1 at 2021-10-17 16:43:04 +0100
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 304)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 4955)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.0ms | Allocations: 5972)
+
+
+Started GET "/sign_up" for ::1 at 2021-10-17 16:43:05 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1247)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5886)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 6923)
+
+
+Started GET "/" for ::1 at 2021-10-17 16:43:43 +0100
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4678)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 5128)
+
+
+Started GET "/sign_in" for ::1 at 2021-10-17 16:43:45 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2298)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 6931)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 7922)
+
+
+Started GET "/" for ::1 at 2021-10-17 16:44:26 +0100
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4678)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 5128)
+
+
+Started GET "/sign_up" for ::1 at 2021-10-17 16:44:27 +0100
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 754)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 5329)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 5794)
+
+
+Started GET "/" for ::1 at 2021-10-17 16:44:28 +0100
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4678)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 5127)
+
+
+Started GET "/sign_in" for ::1 at 2021-10-17 16:44:30 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2039)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 6619)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 7068)
+
+
+Started GET "/" for ::1 at 2021-10-17 16:47:35 +0100
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4678)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 5127)
+
+
+Started GET "/sign_in" for ::1 at 2021-10-17 16:50:46 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2038)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 6615)
+Completed 200 OK in 30ms (Views: 23.3ms | Allocations: 7061)
+
+
+Started POST "/sign_in" for ::1 at 2021-10-17 16:50:50 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"roger@test.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "roger@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 242ms (ActiveRecord: 16.9ms | Allocations: 5312)
+
+
+Started GET "/posts" for ::1 at 2021-10-17 16:50:51 +0100
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4785)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.6ms | Allocations: 5942)
+
+
