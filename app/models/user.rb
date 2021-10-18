@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :posts
+  
   # adds virtual attributes for authentication
   has_secure_password
   # validates email

@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
  def create
     @post = Post.new(post_params)
+    @post.user_id =  Current.user.id
     @post.image.attach(params[:image])
     #@post.image.attach(io: File.open("/path/to/file.jpg"), filename: "pic.jpg", content_type: "image/jpg")
     @post.save
@@ -18,13 +19,13 @@ class PostsController < ApplicationController
  end 
 
  def index
-  @posts = Post.all.with_attached_image
+  @posts = Post.all
  end 
 
  private 
 
  def post_params
-  params.require(:post).permit(:message, :image)
+  params.require(:post).permit(:message, :image, :user_id)
 end
 
 

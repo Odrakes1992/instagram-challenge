@@ -62,6 +62,7 @@
 
 <div class="user-images">
 <% @posts.each do |post| %>
+<% if post.user_id == Current.user.id %>
 <div class="wrapper">
   <p><%= post.message %></p>
   <% if post.image.attached?%>
@@ -71,6 +72,7 @@
 <% end %>
 </div>
 <% end %>
+<%end%>
 </div>
 
 <%= button_to 'Logout', logout_path, method: :delete %>
