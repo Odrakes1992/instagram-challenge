@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -34,10 +36,12 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4.0'
-  gem 'bootstrap', '~> 5.1.0'
+  gem 'bootstrap-sass'
   gem 'jquery-rails'
   gem 'rubocop', '1.20', require: false
   gem 'rubocop-rails'
+  gem 'font-awesome-sass', '~> 5.15.1'
+  gem 'font-awesome-rails'
 end
 
 group :development do

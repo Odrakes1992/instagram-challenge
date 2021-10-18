@@ -1,7 +1,58 @@
+<div class="user-profile">
+  <div class="profile row">
+    <div class="col-md-4 avatar">
+      <div class="wrapper">
+        <img src="http://www.freeimageslive.com/galleries/buildings/london/pics/coventgarden.jpg">
+      </div>
+    </div>
+    
+    <div class="col-md-8 basic-info">
+      <div class="user-wrapper">
+        <h2 class="username">the_original<%= session[:first_name].downcase%></h2>
+        <a class="edit-profile">
+          <button>Edit Profile</button>
+        </a>
+      </div>
+      <ul class="posts">
+        <li><span>12</span> posts</li>
+        <li><span>0</span> followers</li>
+        <li><span>0</span> following</li>
+      </ul>
+      <h2 class="name"><%= session[:first_name]%></h2>
+      <a class="website"><%= session[:first_name].downcase%>.com</a><br>
+      <a href="https://github.com/Odrakes1992" class="website">https://github.com/Odrakes1992</a>
+      <a class="edit-profile">
+          <button>Create Post</button>
+      </a> 
+    </div>
+  </div>
+</div>
 
+<div class="user-tabs">
+  <a class="tab active" href="">
+    <i class="fa fa-th"></i>
+    POSTS
+  </a>
+  <a class="tab" href="">
+    <i class="fa fa-tv"></i>
+    IGTV
+  </a>
+  <a class="tab" href="">
+    <i class="fa fa-bookmark"></i>
+    SAVED
+  </a>
+  <a class="tab" href="">
+    <i class="fa fa-tag"></i>
+    TAGGED
+  </a>
+</div>
+
+
+<!--
 <div> Welcome to your feed <%= session[:first_name]%> </div> <br>
-
 <div> This is the user(using current.user.first_name) : <%=Current.user.first_name%> </div>
+-->
+
 
 <div>
 <%= link_to new_post_path do %>
@@ -9,5 +60,32 @@
 <% end %>
 </div>
 
+<div class="user-images">
+<% @posts.each do |post| %>
+<div class="wrapper">
+  <p><%= post.message %></p>
+  <% if post.image.attached?%>
+    <p>Worked </p>
+  <% else %>
+<img src="https://scx1.b-cdn.net/csz/news/800/2017/theoreticala.jpg">
+<% end %>
+</div>
+<% end %>
+</div>
 
 <%= button_to 'Logout', logout_path, method: :delete %>
+
+<!--
+<div class="user-images">
+  <div class="wrapper">
+    <img src="https://scx1.b-cdn.net/csz/news/800/2017/theoreticala.jpg">
+  </div>
+  <div class="wrapper">
+    <img src="https://scx1.b-cdn.net/csz/news/800/2017/theoreticala.jpg">
+  </div>
+  <div class="wrapper">
+    <img src="https://scx1.b-cdn.net/csz/news/800/2017/theoreticala.jpg">
+  </div>
+
+
+</div>-->

@@ -1,0 +1,8 @@
+<%= form_for @post, local: true do |form| %>
+  Upload your new post <br> <br>
+  <%= form.label "caption : " %>
+  <%= form.text_field :message %><br><br>
+  <%= form.file_field :image %><br><br>
+
+  <%= form.submit "Post", class:'btn btn-primary' %>
+<% end %>
