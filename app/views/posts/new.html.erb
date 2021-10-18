@@ -3,6 +3,8 @@
   <%= form.label "caption : " %>
   <%= form.text_field :message %><br><br>
   <%= form.file_field :image %><br><br>
+  <%= form.text_field :user_id, value: Current.user.id, class:'d-none'%>
+
 
   <%= form.submit "Post", class:'btn btn-primary' %>
 <% end %>

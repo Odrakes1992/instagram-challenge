@@ -66,7 +66,7 @@
 <div class="wrapper">
   <p><%= post.message %></p>
   <% if post.image.attached?%>
-    <p>Worked </p>
+  <img src="<%=(url_for(post.image))%>"/> 
   <% else %>
 <img src="https://scx1.b-cdn.net/csz/news/800/2017/theoreticala.jpg">
 <% end %>

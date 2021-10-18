@@ -5,8 +5,8 @@ class PostsController < ApplicationController
 
  def create
     @post = Post.new(post_params)
-    @post.user_id =  Current.user.id
-    @post.image.attach(params[:image])
+    #@post.user_id =  Current.user.id
+    #@post.image.attach(params[:image])
     #@post.image.attach(io: File.open("/path/to/file.jpg"), filename: "pic.jpg", content_type: "image/jpg")
     @post.save
 
